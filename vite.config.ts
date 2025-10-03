@@ -1,0 +1,18 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: '/capy-cinnamon-latte/',
+  assetsInclude: [
+    '**/*.stl',   // STereoLithography
+    '**/*.svg',   // STereoLithography
+    '**/*.glb',   // GL Binary (GLTF)
+    '**/*.gltf',  // GL Transmission Format
+    '**/*.fbx',   // Filmbox
+    '**/*.obj',   // Wavefront OBJ
+    '**/*.dae',   // COLLADA
+    '**/*.ply',   // Polygon File Format
+  ],
+})
