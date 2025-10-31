@@ -1,9 +1,10 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import './App.css'
-import React, { useRef, useState } from 'react';
-import { Scene } from './components/cozy/Scene.tsx';
+import { useRef, useState } from 'react';
 import musicFile from './assets/music.mp3'
+import { SceneDemo } from './demo/SceneDemo.tsx';
+import { ScenePumpkin } from './components/cozy/ScenePumpkin.tsx';
 
 function App() {
     const audioRef = useRef<HTMLAudioElement>(null)
@@ -38,14 +39,31 @@ function App() {
                     🎵 Cliquez pour démarrer la musique
                 </div>
             )}
-            <Canvas camera={{position: [0, 0, 5], fov: 50, far: 10000}}>
-                <color attach="background" args={['#2d1d00']}/>
-                <ambientLight intensity={0.5}/>
-                <directionalLight position={[5, 450, 5]} intensity={1} castShadow/>
-                <pointLight position={[10, 10, 10]} intensity={1}/>
-                <axesHelper args={[100]}/>
-                <Scene></Scene>
-                <OrbitControls/>
+            <Canvas camera={{position: [500, 200, 500],rotation:[2,1,3], fov: 50, far: 10000}}
+            >
+                <color attach="background" args={["black"]}/>
+                <mesh key={"sky"} position={[0, 400, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                    <circleGeometry args={[1500, 64]}/>
+                    <meshBasicMaterial color={"#ffccaa"} side={2}/>
+                </mesh>
+                eturn (
+                <spotLight
+
+                    position={[20, 500, 20]} // Position above the scene
+                    angle={1} // Cone angle
+                    penumbra={0.9} // Softness of edges
+                    intensity={5} // Brightness
+                    distance={3000} // Maximum range
+                    decay={0.001} // Light fading rate
+                    color="white" // Light color
+
+                    castShadow // Enable shadows
+                />
+
+                <ScenePumpkin></ScenePumpkin>
+                <OrbitControls  target={[40, -40, 40]}
+                                minPolarAngle={Math.PI / 4}
+                                maxPolarAngle={Math.PI / 2.5}/>
             </Canvas>
         </div>
     )

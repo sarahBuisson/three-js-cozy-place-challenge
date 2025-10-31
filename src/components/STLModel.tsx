@@ -57,7 +57,7 @@ export function STLModel({
       castShadow
       receiveShadow
     >
-      {children || <meshStandardMaterial />}
+      {children }
     </mesh>
   )
 }

@@ -38,6 +38,7 @@ export function GLBModel({
           }
           // Appliquer la couleur si spécifiée
           if (color && child.material) {
+            console.log("color")
             if (Array.isArray(child.material)) {
               child.material.forEach(mat => {
                 if (mat instanceof MeshStandardMaterial) {

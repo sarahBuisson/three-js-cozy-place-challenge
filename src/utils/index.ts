@@ -2,5 +2,6 @@ export {
   subtractBoxFromGeometry,
   subtractMultipleBoxes,
   subtractCustomBox,
-  getGeometryBounds
+  getGeometryBounds,
+  calculateCircularPositions
 } from './geometry-utils'

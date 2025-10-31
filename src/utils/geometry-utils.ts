@@ -183,3 +183,48 @@ export function getGeometryBounds(geometry: BufferGeometry) {
     depth: size.z
   }
 }
+
+/**
+ * Calcule les positions d'objets répartis uniformément sur un cercle
+ * 
+ * @param centerX - Coordonnée X du centre du cercle
+ * @param centerZ - Coordonnée Z du centre du cercle
+ * @param y - Coordonnée Y constante pour tous les objets
+ * @param radius - Rayon du cercle
+ * @param objectCount - Nombre d'objets à répartir
+ * @param startAngle - Angle de départ en radians (par défaut: 0)
+ * @returns Tableau de positions au format [x, y, z]
+ * 
+ * @example
+ * // Répartir 8 objets sur un cercle de rayon 5 centré en (0, 1, 0)
+ * const positions = calculateCircularPositions(0, 0, 1, 5, 8)
+ * // Résultat: [[5, 1, 0], [3.54, 1, 3.54], [0, 1, 5], ...]
+ * 
+ * @example
+ * // Commencer à 90 degrés (Math.PI / 2 radians)
+ * const positions = calculateCircularPositions(0, 0, 2, 10, 6, Math.PI / 2)
+ */
+export function calculateCircularPositions(
+  center: Vector3,
+  radius: number,
+  objectCount: number,
+  startAngle: number = 0
+): Vector3[] {
+  const positions: Vector3[] = []
+  
+  // Angle entre chaque objet (répartition uniforme)
+  const angleStep = (2 * Math.PI) / objectCount
+  
+  for (let i = 0; i < objectCount; i++) {
+    // Calculer l'angle pour cet objet
+    const angle = startAngle + i * angleStep
+    
+    // Calculer les coordonnées x et z sur le cercle
+    const x = center.x + radius * Math.cos(angle)
+    const z = center.z + radius * Math.sin(angle)
+    
+    positions.push(new Vector3(x, center.y, z))
+  }
+  
+  return positions
+}
