@@ -8,6 +8,7 @@ export default defineConfig({
   base: '/three-js-cozy-place-challenge/',
   assetsInclude: [
     '**/*.stl',   // STereoLithography
+    '**/*.mp3',   // STereoLithography
     '**/*.svg',   // STereoLithography
     '**/*.glb',   // GL Binary (GLTF)
     '**/*.gltf',  // GL Transmission Format

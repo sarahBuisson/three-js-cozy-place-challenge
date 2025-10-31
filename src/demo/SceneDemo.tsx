@@ -1,7 +1,6 @@
 import React from 'react';
 import { useFrame } from '@react-three/fiber';
-import { GLBModel, STLModel } from '../components';
-
+import { GLBModel } from '../components';
 
 
 export function SceneDemo() {

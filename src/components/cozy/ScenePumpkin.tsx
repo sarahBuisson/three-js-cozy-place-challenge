@@ -42,45 +42,39 @@ export function ScenePumpkin() {
                 <RoundedBoxGeometry></RoundedBoxGeometry>
                 <meshBasicMaterial map={woodTexture}/>
             </mesh>
-            <GLBModel modelPath={"src/assets/models/donut.glb"}
+            <GLBModel modelPath={"models/donut.glb"}
                       scale={40} position={[10, -40, 10]}></GLBModel>
-            <GLBModel modelPath={"src/assets/models/cream_pie_slice_gag.glb"} scale={150}
+            <GLBModel modelPath={"models/cream_pie_slice_gag.glb"} scale={150}
                       position={[400, -101, 400]}></GLBModel>
-            <GLBModel modelPath={"src/assets/models/book_folded_and_unfolded.glb"}
+            <GLBModel modelPath={"models/book_folded_and_unfolded.glb"}
                       scale={1800}
                       position={[400, -150, 400]}
                       rotation={[0, -1, 0]}></GLBModel>
-            <STLModel modelPath={"src/assets/models/Capybara.stl"}
-                      position={[1, -50 + tickCos * 0.5, 1]}
-                      rotation={[tickCos * 0.02, 0, tick * 0.02]}
-                      key={"capySwim"}>
-                <meshStandardMaterial color={capyColor}/>
-            </STLModel>
-            <GLBModel modelPath={"src/assets/models/meditCapy.glb"}
+            <GLBModel modelPath={"models/meditCapy.glb"}
                       key={"capyFloat"}
                       scale={40}
                       position={[0, 0, 20]}/>
 
-            <GLBModel modelPath={"src/assets/models/meditCapy.glb"}
+            <GLBModel modelPath={"models/meditCapy.glb"}
                       position={[300, -150, 900]}
                       rotation={[0, 4 + tickCos * 0.02, 0]}
                       scale={100}
                       key={"capyRead"}>
             </GLBModel>
-            <GLBModel modelPath={"src/assets/models/cushion.glb"}
+            <GLBModel modelPath={"models/cushion.glb"}
                       position={[300, -250, 900]}
 
                       scale={800}
                       key={"cushion1"}>
             </GLBModel>
-            <GLBModel modelPath={"src/assets/models/cushion.glb"}
+            <GLBModel modelPath={"models/cushion.glb"}
                       position={[300, -200, -400]}
 color={"yellow"}
                       scale={800}
                       key={"cushion2"}>
             </GLBModel>
 
-            <GLBModel modelPath={"src/assets/models/meditCapy.glb"}
+            <GLBModel modelPath={"models/meditCapy.glb"}
                       rotation={[0, 0, -1]}
                       position={[300, -150, -400]}
                       scale={100}
@@ -89,7 +83,7 @@ color={"yellow"}
 
             </GLBModel>
 
-            <STLModel modelPath={"src/assets/models/PumpkinMugV2.stl"}
+            <STLModel modelPath={"models/PumpkinMugV2.stl"}
                       position={[0, -250, 0]}
                       key={"bigP"}
                       scale={[5, 5, 3]}>

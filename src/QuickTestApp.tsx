@@ -2,10 +2,6 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import './App.css'
 import React, { useRef, useState } from 'react';
-import musicFile from './assets/music.mp3'
-import { SceneDemo } from './demo/SceneDemo.tsx';
-import { ScenePumpkin } from './components/cozy/ScenePumpkin.tsx';
-import { GLBModel } from './components';
 import { Riddle } from './components/cozy/Riddle.tsx';
 
 function App() {
