@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),        glsl() ],
-  base: '/capy-cinnamon-latte/',
+  base: '/three-js-cozy-place-challenge/',
   assetsInclude: [
     '**/*.stl',   // STereoLithography
     '**/*.svg',   // STereoLithography

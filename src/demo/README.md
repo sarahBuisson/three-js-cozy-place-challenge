@@ -195,7 +195,7 @@ export { MyNewDemo } from './MyNewDemo'
 
 Accédez à la page demo :
 - **Local**: `http://localhost:5173/demo`
-- **Production**: `https://[username].github.io/capy-cinnamon-latte/demo`
+- **Production**: `https://[username].github.io/three-js-cozy-place-challenge/demo`
 
 ## 📚 Ressources
 
