@@ -3,7 +3,6 @@ import { OrbitControls } from '@react-three/drei'
 import './App.css'
 import { useRef, useState } from 'react';
 import musicFile from './assets/music.mp3'
-import { SceneDemo } from './demo/SceneDemo.tsx';
 import { ScenePumpkin } from './components/cozy/ScenePumpkin.tsx';
 
 function App() {

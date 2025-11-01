@@ -1,22 +1,16 @@
 import * as THREE from 'three'
+// @ts-ignore
 import coffeeSmokeVertexShader from './shaders/coffeeSmoke/vertex.glsl'
+// @ts-ignore
 import coffeeSmokeFragmentShader from './shaders/coffeeSmoke/fragment.glsl'
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'
-import { Color, SphereGeometry, Vector3 } from 'three';
-import { BufferGeometry } from 'three/src/core/BufferGeometry';
+import { BufferGeometry, Color, SphereGeometry, Vector3 } from 'three';
 
 // Loaders
 const textureLoader = new THREE.TextureLoader()
 
 
-/**
- * Sizes
- */
-const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
-}
 
 export function Smoke(props: {
     color?: Color,
@@ -40,10 +34,11 @@ export function Smoke(props: {
         else
             geometry.translate(0, 0.5, 0)
         if (props.scale) {
+            // @ts-ignore
             if (!isNaN(props.scale)) {
+                // @ts-ignore
                 geometry.scale(props.scale,props.scale,props.scale)
-            } else {
-
+            } else if(props.scale instanceof Vector3) {
                 geometry.scale(props.scale.x, props.scale.y, props.scale.z)
             }
         } else {
@@ -76,8 +71,7 @@ export function Smoke(props: {
      * Animate
      */
     const clock = new THREE.Clock()
-
-    const tick = useFrame(() => {
+/* const tick = */useFrame(() => {
         const elapsedTime = clock.getElapsedTime()
 
         // Update smoke

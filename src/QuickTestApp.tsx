@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import './App.css'
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Riddle } from './components/cozy/Riddle.tsx';
 
 function App() {

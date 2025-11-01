@@ -2,7 +2,6 @@ import { OrbitControls } from '@react-three/drei';
 
 import { Smoke } from '../common/shader/smoke/Smoke.tsx';
 import { Color, SphereGeometry, Vector3 } from 'three';
-import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { GLBModel } from '../GLBModel.tsx';
 
@@ -10,7 +9,7 @@ export default function Candle(props: { position: Vector3, scale: number }) {
 
     return <>
         <group position={props.position} scale={props.scale}>
-            <GLBModel modelPath={"src/assets/models/candle_scented.glb"}
+            <GLBModel modelPath={"models/candle_scented.glb"}
                       scale={30}></GLBModel>
             <pointLight
                 position={[0, 350, -400]}

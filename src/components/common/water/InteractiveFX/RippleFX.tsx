@@ -16,8 +16,7 @@ export type FXRippleProps = {
 export default function RippleFX({
 	frequency = 0.01,
 	rotation = 0.05,
-	fadeout_speed = 0.9,
-	scale = 0.2,
+									 scale = 0.2,
 	alpha = 1.0,
 }: FXRippleProps) {
 	const { ref: materialRef, refPointer } = useContext(WaterContext);
@@ -33,6 +32,7 @@ export default function RippleFX({
 		texture: ripple,
 		dpr,
 	});
+	// @ts-ignore
 	const [updateBlending, setBlending] = useBlending({ size, dpr });
 
 	setRipple({

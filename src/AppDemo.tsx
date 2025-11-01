@@ -4,7 +4,6 @@ import './App.css'
 import { useRef, useState } from 'react';
 import musicFile from './assets/music.mp3'
 import { SceneDemo } from './demo/SceneDemo.tsx';
-import { ScenePumpkin } from './components/cozy/ScenePumpkin.tsx';
 
 function App() {
     const audioRef = useRef<HTMLAudioElement>(null)
@@ -48,7 +47,7 @@ function App() {
                 <pointLight position={[10, 10, 10]} intensity={1}/>
                 <axesHelper args={[100]}/>
                 <SceneDemo></SceneDemo>
-                <OrbitControls   />
+                <OrbitControls/>
             </Canvas>
         </div>
     )

@@ -1,41 +1,24 @@
 import React, { Suspense, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { MeshReflectorMaterial, MeshTransmissionMaterial, RoundedBoxGeometry } from '@react-three/drei';
+import { MeshReflectorMaterial, RoundedBoxGeometry } from '@react-three/drei';
 
 import { STLModel } from '../STLModel.tsx';
 import Loading3D from '../Loading3D.tsx';
 import { GLBModel } from '../GLBModel.tsx';
-import { TextureLoader } from 'three';
-import WaterSurfaceSimple from '../common/water/WaterSurfaceSimple.tsx';
-import RippleFX from '../common/water/InteractiveFX/RippleFX.tsx';
+import { TextureLoader, Vector3 } from 'three';
 import Candle from './Candle.tsx';
 import { Riddle } from './Riddle.tsx';
-
-
-const FX_RENDER = (
-
-    <RippleFX
-
-        fadeout_speed={0.95}
-    />
-
-);
-
-
 export function ScenePumpkin() {
     const [tick, setTick] = React.useState(0);
     const [tickCos, setTickCos] = React.useState(0);
-    const [tickSin, setTickSin] = React.useState(0);
 
     useFrame(() => {
         setTick(tick + 1);
         setTickCos(Math.cos(tick * 0.1) * 10);
-        setTickSin(Math.cos(tick * 0.1) * 10);
     })
-    let woodTexture = useMemo(() => new TextureLoader().load('src/assets/woodTexture.jpg'), []);
-    let capyColor = "#fcaf56";
+    let woodTexture = useMemo(() => new TextureLoader().load('woodTexture.jpg'), []);
     return (<>
-        <Candle scale={50} position={[0, -200, -400]}></Candle>
+        <Candle scale={50} position={new Vector3(0, -200, -400)}></Candle>
         <ambientLight/>
         <Suspense fallback={<Loading3D/>}>
             <mesh scale={[10000, 0, 10000]} position={[0, -250, -0]}>
@@ -114,7 +97,7 @@ color={"yellow"}
             <MeshReflectorMaterial mirror={2}/>    </mesh>
         <Riddle tick={tick}
                 scale={0.5}
-                position={[10, -40, 10]}>
+                position={new Vector3(10, -40, 10)}>
             <MeshReflectorMaterial color={"white"}/>
         </Riddle>
 

@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+// @ts-ignore
 import coffeeSmokeVertexShader from './shaders/coffeeSmoke/vertex.glsl'
+// @ts-ignore
 import coffeeSmokeFragmentShader from './shaders/coffeeSmoke/fragment.glsl'
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'
@@ -10,13 +11,7 @@ import { OrbitControls } from '@react-three/drei'
 const textureLoader = new THREE.TextureLoader()
 
 
-/**
- * Sizes
- */
-const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
-}
+
 
 export function Fire() {
 
@@ -52,8 +47,8 @@ export function Fire() {
      * Animate
      */
     const clock = new THREE.Clock()
-
-    const tick =useFrame( () => {
+/*
+    const tick =*/useFrame( () => {
         const elapsedTime = clock.getElapsedTime()
 
         // Update smoke

@@ -1,7 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useRef, useState } from 'react';
-import { SceneDemo } from './SceneDemo';
 import { FireObject } from './FireObject';
 
 function AppFireDemo() {

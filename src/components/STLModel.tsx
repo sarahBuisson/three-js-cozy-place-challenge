@@ -1,6 +1,6 @@
 import { useLoader } from '@react-three/fiber'
-import { useEffect, useRef, useMemo, ReactNode } from 'react'
-import { BufferGeometry, Mesh, Vector3 } from 'three'
+import { useEffect, useRef, useMemo } from 'react'
+import { BufferGeometry, Mesh } from 'three'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'
 
 interface STLModelProps {
@@ -9,7 +9,7 @@ interface STLModelProps {
   position?: [number, number, number]
   rotation?: [number, number, number]
   onGeometryLoad?: (geometry: BufferGeometry) => BufferGeometry
-  children?: ReactNode
+  children?: any
 }
 
 export function STLModel({

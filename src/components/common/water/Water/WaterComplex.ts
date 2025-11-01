@@ -276,7 +276,9 @@ class WaterComplex extends Mesh {
 		});
 
 		if (flowMap !== undefined) {
+			// @ts-ignore
 			if (this.material.defines !== undefined) {
+				// @ts-ignore
 				this.material.defines.USE_FLOWMAP = '';
 			}
 			(this.material as any).uniforms['tFlowMap'] = {

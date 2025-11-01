@@ -5,7 +5,9 @@ import { GLBModel } from '../components';
 
 export function SceneDemo() {
     const [tick, setTick] = React.useState(0);
+    // @ts-ignore
     const [tickCos, setTickCos] = React.useState(0);
+    // @ts-ignore
     const [tickSin, setTickSin] = React.useState(0);
 
     useFrame(() => {
@@ -13,10 +15,9 @@ export function SceneDemo() {
         setTickCos(Math.cos(tick * 0.1) * 10);
         setTickSin(Math.cos(tick * 0.1) * 10);
     })
-    let capyColor = "#fcaf56";
     return (<>
 
-            <GLBModel modelPath={"src/assets/models/meditCapy.glb"}></GLBModel>
+            <GLBModel modelPath={"models/meditCapy.glb"}></GLBModel>
 
 
 

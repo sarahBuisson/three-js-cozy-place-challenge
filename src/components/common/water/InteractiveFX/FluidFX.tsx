@@ -1,6 +1,6 @@
 import { useBlending, useFluid, usePointer } from '@funtech-inc/use-shader-fx';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useContext, useMemo } from 'react';
+import { useContext } from 'react';
 import { Vector2, Vector3 } from 'three';
 import { WaterContext } from '../WaterContext';
 
@@ -44,7 +44,9 @@ export default function FluidFX({
 	});
 	const [updateBlending] = useBlending({ size, dpr });
 
+
 	setFluid({
+		// @ts-ignore
 		density_dissipation: densityDissipation,
 		velocity_dissipation: velocityDissipation,
 		velocity_acceleration: velocityAcceleration,

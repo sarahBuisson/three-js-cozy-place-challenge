@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react';
-import { CircleGeometry, PlaneGeometry, RepeatWrapping, Vector2, Vector3 } from 'three';
+import { CircleGeometry, RepeatWrapping, Vector2 } from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { WaterSimple } from './Water/WaterSimple';
@@ -38,10 +38,6 @@ export default function WaterSurfaceSimple({
 	const waterNormals = useTexture('water/simple/waternormals.jpeg');
 	waterNormals.wrapS = waterNormals.wrapT = RepeatWrapping;
 	const geom = useMemo(
-		() => new CircleGeometry(width, length),
-		[length, width]
-	);
-	const overGeom = useMemo(
 		() => new CircleGeometry(width, length),
 		[length, width]
 	);

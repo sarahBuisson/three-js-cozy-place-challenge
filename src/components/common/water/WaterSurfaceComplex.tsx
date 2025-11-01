@@ -34,7 +34,7 @@ export default function WaterSurfaceComplex({
 	fxDistortionFactor = 0.2,
 	fxDisplayColorAlpha = 0.0,
 }: Props) {
-	const ref = useRef<any>();
+	const ref = useRef<any>(null);
 	const refPointer = useRef(new Vector2(0, 0));
 
 	const gl = useThree((state) => state.gl);
